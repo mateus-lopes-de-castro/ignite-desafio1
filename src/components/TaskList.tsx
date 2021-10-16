@@ -3,6 +3,7 @@ import { useState } from 'react'
 import '../styles/tasklist.scss'
 
 import { FiTrash, FiCheckSquare } from 'react-icons/fi'
+import { conditionalExpression } from '@babel/types';
 
 interface Task {
   id: number;
@@ -15,15 +16,42 @@ export function TaskList() {
   const [newTaskTitle, setNewTaskTitle] = useState('');
 
   function handleCreateNewTask() {
-    // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
+
+  if(newTaskTitle == '') return;
+   // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
+   let maxId = 0;
+   for(let i =0; i < tasks.length; i++){
+    if(maxId < tasks[i].id){
+      maxId = tasks[i].id;
+    }
+   }
+   maxId++;
+    let task = {id: maxId, title: newTaskTitle, isComplete: false}
+    setTasks([...tasks,task]);
+    setNewTaskTitle('');
   }
 
   function handleToggleTaskCompletion(id: number) {
     // Altere entre `true` ou `false` o campo `isComplete` de uma task com dado ID
+    let newTasks = [];
+    for(let i =0; i < tasks.length; i++){
+      if(tasks[i].id == id){
+        tasks[i].isComplete = !tasks[i].isComplete;
+      }
+      newTasks.push(tasks[i]);
+    }
+    setTasks(newTasks);
   }
 
   function handleRemoveTask(id: number) {
     // Remova uma task da listagem pelo ID
+    let newTasks = [];
+    for(let i =0; i < tasks.length; i++){
+      if(tasks[i].id != id){
+        newTasks.push(tasks[i]);
+      }
+    }
+    setTasks(newTasks);
   }
 
   return (
