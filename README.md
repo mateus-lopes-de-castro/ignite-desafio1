@@ -29,7 +29,7 @@ O To.do é uma aplicação simples onde você insere tarefas a serem realizadas 
 Baixe esse repositório e com o seu o terminal, entre no diretório
 
 1. Rode o comando `npm install` para instalar as dependências
-3. E pra iniciar a aplicação, rode o comando `npm run dev e acesse o endereço http://localhost:8080` 
+3. E pra iniciar a aplicação, rode o comando `npm run dev` e acesse o endereço http://localhost:8080 
 
 ## 🔖 Layout
 ![logo](https://user-images.githubusercontent.com/77696623/137630838-5e48c331-fd3e-43a5-a359-8e485138e154.PNG)
