@@ -23,6 +23,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## 💻 Projeto
 
 O To.do é uma aplicação simples onde você insere tarefas a serem realizadas em uma lista, permitindo atualizar o seu status como concluída ou pendente e também excluir da lista.
+Aplicação desenvolvida no curso Ignite da https://github.com/Rocketseat.
 
 ## Como utilizar?
 
